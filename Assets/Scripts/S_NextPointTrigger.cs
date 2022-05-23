@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class S_NextPointTrigger : S_GlobalTrigger
@@ -21,6 +19,7 @@ public class S_NextPointTrigger : S_GlobalTrigger
         if(CheckSignal.ToString() == Message && IsEnabled)
         {
             S_GameManager.Player?.GetComponent<S_MoveComponent>().GoToPoint();
+            MySignal?.Invoke("NextPoint", gameObject);
         }
     }
 }
